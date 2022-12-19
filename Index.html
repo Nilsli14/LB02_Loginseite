@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="script" href="js/main.js">
+    <title>Document</title>
+</head>
+<body>
+<h2>Modal Signup Form</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" class="mainbtn">Registrieren</button>
+
+<section id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <form class="modal-content" action="/action_page.php">
+        <section class="container">
+            <h1>Registrieren</h1>
+            <p>Füllen Sie diese Felder aus, um registriert zu werden.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Email" name="email" required>
+
+            <label for="psw"><b>Passwort</b></label>
+            <input type="passwort" placeholder="Passwort eingeben" name="psw" required>
+
+            <label for="psw-repeat"><b>Passwort wiederholen</b></label>
+            <input type="passwort" placeholder="Passwort wiederholen" name="psw-repeat" required>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Abbrechen</button>
+                <button type="submit" class="signupbtn">Registrieren</button>
+            </div>
+        </section>
+    </form>
+</section>
+</body>
+</html>
