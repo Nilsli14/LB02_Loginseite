@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<section id="main">
-    <button id="register-button" class="mainbtn">Registrieren</button>
-</section>
+<button id="register-button" class="mainbtn">Registrieren</button>
 <section id="register-section" class="modal hidden">
     <button id="register-close-modal-button" class="close" title="Close Modal">x</button>
     <form id="register-form" class="modal-content">
@@ -18,14 +16,14 @@
             <h1>Registrieren</h1>
             <p>Füllen Sie diese Felder aus, um registriert zu werden.</p>
             <hr>
-            <input type="email" placeholder="Emailadresse eingeben" name="text1" required id="register-email">
+            <input type="email" placeholder="Emailadresse eingeben" name="text1" id="register-email">
             <small id="register-email-hint" class="form-hint"></small>
 
             <div class="pw">
-            <input type="password" placeholder="Passwort eingeben" name="register-password" required id="register-password">
+                <input type="password" placeholder="Passwort eingeben" name="register-password" id="register-password">
                 <small id="register-password-hint" class="form-hint"></small>
             </div>
-            <input type="password" placeholder="Passwort wiederholen" name="register-password-repeat" required id="register-password-repeat">
+            <input type="password" placeholder="Passwort wiederholen" name="register-password-repeat" id="register-password-repeat">
             <small id="register-password-check-hint" class="form-hint"></small>
 
 
@@ -40,7 +38,9 @@
             <input type="checkbox" class="checkbox" id="check">
             <span class="checkbox-text">I'm not a robot</span>
         </div>
+    </label>
 </section>
 <script src="js/main.js" type="text/javascript"></script>
+<script src="writeJson/write.js" type="text/javascript"></script>
 </body>
 </html>

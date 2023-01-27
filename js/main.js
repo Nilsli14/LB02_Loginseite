@@ -12,14 +12,16 @@ const registerPasswordCheckHint = document.getElementById('register-password-che
 const registerForm = document.getElementById("register-form");
 let passwordValid = false;
 let emailValid = false;
+let registerPasswordField2;
+let registerEmailField2;
 
 
 function checkEmail() {
     const emailValue = registerEmailField.value;
     emailValid = false;
 
-     const pattern = /^.{3,}@.{3,}\..{2,3}$/;
-     if (emailValue.match(pattern))
+    const pattern = /^.{3,}@.{3,}\..{2,3}$/;
+    if (emailValue.match(pattern))
     {
         // valid
         registerEmailField.classList.remove("bad-input");
@@ -30,12 +32,12 @@ function checkEmail() {
         emailValid = true;
     }
     else {
-         registerEmailField.classList.remove("good-input");
-         registerEmailField.classList.add("bad-input");
-         registerEmailHint.classList.add("bad-hint");
-         registerEmailHint.classList.remove("good-hint");
-         registerEmailHint.innerText = ("E-Mail-Adresse ist nicht valid!");
-     }
+        registerEmailField.classList.remove("good-input");
+        registerEmailField.classList.add("bad-input");
+        registerEmailHint.classList.add("bad-hint");
+        registerEmailHint.classList.remove("good-hint");
+        registerEmailHint.innerText = ("E-Mail-Adresse ist nicht valid!");
+    }
 }
 function checkPass() {
     passwordValid = false;
@@ -115,6 +117,15 @@ function updateRegisterSubmit() {
         registerSubmitButton.disabled = true;
     }
 }
+function handelsubmit(){
+    registerPasswordField2 = document.getElementById("register-password").value;
+    registerEmailField2 = document.getElementById("register-email").value;
+    alert("Sie haben sich erfolgreich registriert, mit der Email: " + registerEmailField2 +
+        "und dem Passwort: " + registerPasswordField2);
+    event.preventDefault()
+    writeJson()
+}
+
 registerCloseModalButton.addEventListener('click', closeRegisterModal);
 registerCancelButton.addEventListener('click', closeRegisterModal);
 registerEmailField.addEventListener('keyup', checkEmail)
@@ -122,5 +133,5 @@ registerEmailField.addEventListener('keyup', updateRegisterSubmit);
 registerPasswordField.addEventListener('keyup', checkPass)
 registerPasswordRepeatField.addEventListener('keyup', checkPass)
 registerForm.addEventListener('change', updateRegisterSubmit);
+registerForm.addEventListener('submit', handelsubmit);
 registerPasswordRepeatField.addEventListener('keyup', updateRegisterSubmit)
-
